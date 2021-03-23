@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Product.css";
 
 function Product({ title, price }) {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+      if (count % 2 === 0){
+          console.log("It is EVEN");
+      }
+      else{
+          console.log("It is ODD");
+      }
+  }, [count])
 
   return (
     <div className="product">
